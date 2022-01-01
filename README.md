@@ -16,4 +16,4 @@ app.py
 ```
 
 ## Visit website
-[http://bluebolo.live](http://bluebolo.live)
+[bluebolo.live](https://bluebolo.live)

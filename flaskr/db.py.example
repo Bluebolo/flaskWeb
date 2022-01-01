@@ -12,3 +12,22 @@ def init_db():
     )
     cursor = db.cursor()
     return cursor
+
+class DBManager:
+    def __init__(self):
+        self.db = mysql.connect(
+            host=
+            port=
+            user=
+            passwd=
+            database=
+        )
+
+    def db_cursor(self):
+        return self.db.cursor()
+
+    def db_commit(self):
+        self.db.commit()
+
+    def db_rollback(self):
+        self.db.rollback()
