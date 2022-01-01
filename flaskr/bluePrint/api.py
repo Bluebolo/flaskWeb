@@ -26,6 +26,7 @@ def get_article():
     _sql = f"SELECT `artId`, `artTitle`, `artTime` FROM `article` WHERE `show` = 'yes' ORDER BY `artId` DESC LIMIT {nums} OFFSET 0 "
     cursor.execute(_sql)
     result = cursor.fetchall()
+    cursor.close()
     data = {
         'arc': []
     }

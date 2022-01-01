@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- device -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="icon" href="{{ url_for('static',filename='images/icon.ico') }}" type="image/gif">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RT0G89D1C0"></script>
+
+    {% block css_js %}{% endblock %}
+</head>
+{% block style %}{% endblock %}
+<body>
+<div>
+    {% block content %}{% endblock %}
+</div>
+</body>
+{% block script %}{% endblock %}
+</html>

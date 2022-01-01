@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bluebolo | 友链
+{% endblock %}
+
+{% block css_js %}
+    <link href="{{ url_for('static',filename='css/index.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/article.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/article-post.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/normal.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block style %}
+    <style>
+        .post-content a {
+            color: #66BAB7;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="hd logodiv">
+        <img src="" class="logopng">
+        <p class="logot">
+            <span class="logo_1">&lt;</span>
+            <span class="logo_2">/</span>
+            <span class="logo_3">#</span>
+            <a class="site-name ruby-title" href="/" title="Index">
+                <ruby>
+                    Bluebolo
+                </ruby>
+            </a>
+            <span class="logo_3">#</span>
+            <span class="logo_2">/</span>
+            <span class="logo_1">&gt;</span>
+        </p>
+    </div>
+    <div class="hd">
+        <ol class="breadcrumb">
+            <li><a class="ba" href="/archives" style="">归档</a></li>
+            <li><a class="ba" href="/links" style="">友链</a></li>
+            <li><a class="ba" href="/about" style="">关于</a></li>
+            <li><a class="ba" href="/read" style="">杂谈</a></li>
+        </ol>
+    </div>
+    <div class="line"></div>
+    <div class="hd posts">
+        <a class="back" href="javascript:void(0);" target="_self"><i class="fa fa-reply replay-btn"
+                                                                     aria-hidden="true"></i></a>
+
+        <div class="post-content">
+            <div style="margin: 12px auto"></div>
+            <blockquote>
+                Links.
+                最好通过邮箱联系我，不会遗漏
+            </blockquote>
+            <a href="https://soptq.me" target="_blank" rel="noopener">Soptq</a>
+            <br>
+        </div>
+        <div class="line" style="margin: 24px auto;width: 100%;"></div>
+    </div>
+    <div class="footer" id="footer" style="color: #51525d;">
+        <p>
+            Copyright © 2021 <a class="flink" href="https://nocilol.me" style="color: #51525d;">Bluebolo</a><br>
+        </p>
+    </div>
+{% endblock %}

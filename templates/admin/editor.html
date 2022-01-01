@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bluebolo | 编辑器
+{% endblock %}
+
+{% block css_js %}
+    <link href='{{ url_for('static',filename='css/article.css') }}' rel="stylesheet">
+    <link href='{{ url_for('static',filename='css/normal.css') }}' rel="stylesheet">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block content %}
+    <div>
+        <form method="post" id="formMd">
+            <input type="hidden" name="_token" value="jMNLbnoyqKfywY5hecEfejnnKcLOEj6CI4h5BiVX">
+            <div class="article-ue-title">
+                <p>文章标题</p>
+                <input class="f-input" type="text" id="title" name="artTitle" placeholder="输入标题">
+                <p>文章来源</p>
+                <div class="radio">
+                    <label for="ck1">原创</label><input type="radio" name="orir" value="原创" id="ck1" checked>
+                    <label for="ck2">转载</label><input type="radio" name="orir" value="转载" id="ck2">
+                </div>
+            </div>
+            <div id="editor" style="margin: 24px auto">
+                <textarea id="md_editor">Input here.</textarea>
+            </div>
+            <input type="hidden" name="artHtml" id="artHtml">
+            <input type="hidden" name="artContent" id="artContent">
+        </form>
+        <button id="submit" type="submit">提交文章</button>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="{{ url_for('static',filename='js/mditor.js') }}"></script>
+    <script type="text/javascript">
+        //获取textarea dom对象
+        var ele_textarea = document.getElementById('md_editor');
+        //实例化Mditor
+        var editor = new mditor(document.getElementById('md_editor'), {
+            //自定义显示效果class
+        });
+        document.querySelector('#submit').onclick = function (){
+            document.querySelector('#artHtml').value = editor.getHtml()
+            document.querySelector('#artContent').value = editor.getContent()
+            document.querySelector('#formMd').submit()
+        }
+    </script>
+{% endblock %}

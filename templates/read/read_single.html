@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bluebolo | {{ title }}
+{% endblock %}
+
+{% block css_js %}
+    <script src="https://cdn.bootcdn.net/ajax/libs/marked/2.1.3/marked.min.js"></script>
+    <link href='{{ url_for('static',filename='css/article.css') }}' rel="stylesheet">
+    <link href='{{ url_for('static',filename='css/article-post.css') }}' rel="stylesheet">
+    <link href='{{ url_for('static',filename='css/normal.css') }}' rel="stylesheet">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="hd posts">
+        <h1 class="post-title">{{ title }}</h1>
+        <div class="line" style="width: 100%"></div>
+        <div class="post-content" style="margin: 24px auto">
+
+        </div>
+        <div class="post-content" id="view">
+            {#            {{ text | safe }}#}
+        </div>
+        <div class="line" style="width: 100%"></div>
+    </div>
+    <div class="footer" id="footer" style="color: #51525d;">
+        <p>
+            Copyright © 2021 <a class="flink" href="https://nocilol.me" style="color: #51525d;">Bluebolo</a><br>
+        </p>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+        var rendererMD = new marked.Renderer();
+        marked.setOptions({
+            renderer: rendererMD,
+            gfm: true,
+            tables: true,
+            breaks: false,
+            pedantic: false,
+            sanitize: false,
+            smartLists: true,
+            smartypants: false,
+            highlight: function (code) {
+                return hljs.highlightAuto(code).value;
+            }
+        })
+        let markdown_to_html = ''
+        axios.get('/static/markdown/' + '{{ title }}' + '.md', {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+        }).then(res => {
+            markdown_to_html = res.data
+            document.querySelector('#view').innerHTML = (marked(markdown_to_html))
+        })
+    </script>
+
+{% endblock %}

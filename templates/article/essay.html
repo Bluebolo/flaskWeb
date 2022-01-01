@@ -1,0 +1,19 @@
+{% extends 'article/base_article.html' %}
+
+{% block title %}
+    Bluebolo | {{ data['artTitle'] }}
+{% endblock %}
+
+{% block article_html %}
+    {{ data['artHtml'] | safe }}
+{% endblock %}
+
+{% block script %}
+    <script>
+        window.onload = () => {
+            document.querySelector('body').style.fontFamily = '"Noto Serif SC", serif !important';
+            timeago.render(document.querySelectorAll('.need_to_be_rendered'));
+        }
+    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
