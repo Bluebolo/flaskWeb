@@ -19,6 +19,13 @@
     .posttime {
         display: none;
     }
+    .postname{
+        display: block;
+        float: none;
+    }
+    .flink{
+        overflow: hidden;
+    }
 }
 
 body {

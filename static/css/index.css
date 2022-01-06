@@ -1,21 +1,23 @@
 
-
 a {
     color: #d2d2d2;
     text-decoration: none;
 }
+
 a:focus,
 a:hover {
     color: #699be9;
     text-decoration: underline;
 }
-.ba{
+
+.ba {
     color: #66BAB7;
 }
 
-ruby{
+ruby {
     color: #66BAB7;
 }
+
 /*logo*/
 @media screen and (max-width: 800px) {
     .logodiv {
@@ -24,12 +26,7 @@ ruby{
 }
 
 
-@media screen and (max-width: 800px) {
-    .hd {
-        width: 95%;
-        margin: auto;
-    }
-}
+
 
 
 .logodiv {
@@ -41,6 +38,7 @@ ruby{
     width: 700px;
     margin: auto;
 }
+
 .logot {
     font-family: 'Zpix', serif;
     font-weight: bold;
@@ -48,18 +46,23 @@ ruby{
     margin-top: 8px;
     margin-bottom: 16px;
 }
+
 .logot a {
     color: #51525d;
 }
+
 .logot a:hover {
     text-decoration: none;
 }
+
 .logot .logo_1 {
     color: #888;
 }
+
 .logot .logo_2 {
     color: #6d9ee7;
 }
+
 .logot .logo_3 {
     color: #be8355;
 }
@@ -79,15 +82,18 @@ ruby{
     border-radius: 0px;
     text-align: center;
 }
-.breadcrumb>li {
+
+.breadcrumb > li {
     display: inline-block;
 }
-.breadcrumb>li+li:before {
+
+.breadcrumb > li + li:before {
     padding: 0 5px;
     color: #ccc;
     content: '&\00a0';
 }
-.breadcrumb>.active {
+
+.breadcrumb > .active {
     color: #777;
 }
 
@@ -97,25 +103,35 @@ ruby{
     font-weight: bold;
     margin-top: 30px;
 }
+
 .list {
     padding-left: 25px;
     padding-right: 25px;
     height: 30px;
     cursor: pointer;
 }
-.list:hover{
+
+.flink {
+    display: block;
+}
+
+.list:hover {
     color: #66BAB7;
     transition: all .3s linear;
 }
+
 .postname {
     float: left;
 }
+
 .posttime {
     float: right;
 }
+
 .logopng {
     width: 315px;
 }
+
 .breadcrumb {
     padding: 8px 15px;
     list-style: none;
@@ -123,18 +139,40 @@ ruby{
     border-radius: 0px;
     text-align: center;
 }
+
 .title-year {
     color: #6d9ee7;
 }
+
 .hd .more {
     margin-top: 30px;
 }
 
-.index-body{
+.index-body {
     min-height: 660px;
 }
-.ruby-title{
+
+.ruby-title {
     background: linear-gradient(to bottom, #DC9FB4, #0eb0c9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.ruby{
+    text-align: center;
+    color: #66BAB7;
+}
+
+@media screen and (max-width: 800px) {
+    .hd {
+        width: 95%;
+        margin: auto;
+    }
+
+    .ruby-title {
+        background: #66BAB7;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #66BAB7;
+        font-size: 20px;
+    }
 }

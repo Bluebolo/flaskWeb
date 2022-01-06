@@ -2,4 +2,3 @@
 __pycache__/*
 *.pyc
 /flaskr/db.py
-/static/markdown/*
