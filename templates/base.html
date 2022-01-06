@@ -15,12 +15,19 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RT0G89D1C0"></script>
 
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     {% block css_js %}{% endblock %}
 </head>
 {% block style %}{% endblock %}
 <body>
 <div>
     {% block content %}{% endblock %}
+    <div class="footer" id="footer" style="color: #51525d;">
+        <div style="height: auto">
+            Copyright © 2021 <br>
+            <a class="flink" href="https://bluebolo.live" style="color: #51525d;margin: 0">Bluebolo</a>
+        </div>
+    </div>
 </div>
 </body>
 {% block script %}{% endblock %}

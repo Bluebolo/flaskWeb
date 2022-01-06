@@ -63,11 +63,14 @@ def article_id(art_id=None):
     art_data = {}
     if first == 1:
         contain = cursor.fetchone()
-        art_data = {
-            'artTitle': contain[1],
-            'artHtml': contain[2],
-            'artTime': contain[3]
-        }
+        if contain[4] == 'no':
+            abort(404)
+        else:
+            art_data = {
+                'artTitle': contain[1],
+                'artHtml': contain[2],
+                'artTime': contain[3]
+            }
     else:
         abort(404)
     return render_template('article/essay.html', data=art_data)

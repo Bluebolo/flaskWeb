@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Bluebolo | 友链
+    友链 - Bluebolo
 {% endblock %}
 
 {% block css_js %}
     <link href="{{ url_for('static',filename='css/index.css') }}" rel="stylesheet">
     <link href="{{ url_for('static',filename='css/article.css') }}" rel="stylesheet">
     <link href="{{ url_for('static',filename='css/article-post.css') }}" rel="stylesheet">
+    <link href='{{ url_for('static',filename='css/markdown-style.css') }}' rel="stylesheet">
     <link href="{{ url_for('static',filename='css/normal.css') }}" rel="stylesheet">
 {% endblock %}
 
@@ -59,10 +60,16 @@
             <br>
         </div>
         <div class="line" style="margin: 24px auto;width: 100%;"></div>
+            <div id="vcomments"></div>
     </div>
-    <div class="footer" id="footer" style="color: #51525d;">
-        <p>
-            Copyright © 2021 <a class="flink" href="https://nocilol.me" style="color: #51525d;">Bluebolo</a><br>
-        </p>
-    </div>
+{% endblock %}
+{% block script %}
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '0U3J9D6xIIkEgXNNHmCWxW26-gzGzoHsz',
+            appKey: 'ivJp3FD0fB4kwzPlnepKNsKX',
+            avatar: 'identicon'
+        })
+    </script>
 {% endblock %}

@@ -99,7 +99,7 @@ ruby {
 
 /*post*/
 .titlex {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     margin-top: 30px;
 }
@@ -113,6 +113,8 @@ ruby {
 
 .flink {
     display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 .list:hover {
@@ -121,6 +123,7 @@ ruby {
 }
 
 .postname {
+
     float: left;
 }
 

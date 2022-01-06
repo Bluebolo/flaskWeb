@@ -4,18 +4,21 @@
     <link href='{{ url_for('static',filename='css/article.css') }}' rel="stylesheet">
     <link href='{{ url_for('static',filename='css/article-post.css') }}' rel="stylesheet">
     <link href='{{ url_for('static',filename='css/normal.css') }}' rel="stylesheet">
+    <link href='{{ url_for('static',filename='css/markdown-style.css') }}' rel="stylesheet">
+
     <link href="https://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 {% endblock %}
 
 {% block content %}
- <div class="hd posts">
-        <h1 class="post-title">{{data['artTitle']}}</h1>
+    <div class="hd posts">
+        <h1 class="post-title">{{ data['artTitle'] }}</h1>
         <div class="line" style="width: 100%"></div>
         <div class="post-content" style="margin: 24px auto">
             <blockquote style="display: block;">
-                This article was published <span class="need_to_be_rendered" datetime="{{data['artTime']}}"></span>. The
+                This article was published <span class="need_to_be_rendered" datetime="{{ data['artTime'] }}"></span>.
+                The
                 information described in this article may have changed or become outdated. Please pay attention to
                 distinguish
             </blockquote>
@@ -26,11 +29,8 @@
             </div>
             <div class="line" style="width: 100%"></div>
         </div>
-    </div>
-    <div class="footer" id="footer" style="color: #51525d;">
-        <p>
-            Copyright © 2021 <a class="flink" href="https://nocilol.me" style="color: #51525d;">Bluebolo</a><br>
-        </p>
+
+        <div id="vcomments"></div>
     </div>
 {% endblock %}
 

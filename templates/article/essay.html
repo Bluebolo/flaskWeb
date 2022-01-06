@@ -1,7 +1,7 @@
 {% extends 'article/base_article.html' %}
 
 {% block title %}
-    Bluebolo | {{ data['artTitle'] }}
+    {{ data['artTitle'] }} - Bluebolo
 {% endblock %}
 
 {% block article_html %}
@@ -16,4 +16,12 @@
         }
     </script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '0U3J9D6xIIkEgXNNHmCWxW26-gzGzoHsz',
+            appKey: 'ivJp3FD0fB4kwzPlnepKNsKX',
+            avatar: 'identicon'
+        })
+    </script>
 {% endblock %}

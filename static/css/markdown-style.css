@@ -1,0 +1,22 @@
+.post-content p{
+    font-size: 18px;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+.post-content blockquote {
+    border-left: 0.25em solid #798ba9;
+    color: #798ba9;
+    padding: 0 1em;
+    margin-left: 13px;
+    font-size: 18px;
+    word-break: break-all;
+}
+.post-content li{
+    font-size: 17px;
+}
+.post-content h2{
+    font-size: 22px;
+}
+.post-content h3{
+    font-size:  18px;
+}
